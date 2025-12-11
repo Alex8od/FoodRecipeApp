@@ -8,15 +8,17 @@ const favoritesSlice = createSlice({
   reducers: {
     toggleFavorite: (state, action) => {
       const recipe = action.payload;
+
+      // prüfen, ob schon drin (Vergleich über idFood)
       const existingIndex = state.favoriterecipes.findIndex(
         (item) => item.idFood === recipe.idFood
       );
 
       if (existingIndex !== -1) {
-        // schon drin → entfernen
+        // existiert → entfernen
         state.favoriterecipes.splice(existingIndex, 1);
       } else {
-        // noch nicht drin → hinzufügen
+        // existiert nicht → hinzufügen
         state.favoriterecipes.push(recipe);
       }
     },
