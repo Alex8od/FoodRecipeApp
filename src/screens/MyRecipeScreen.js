@@ -20,10 +20,9 @@ const MyRecipeScreen = () => {
   const [recipes, setrecipes] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // Rezepte beim Start laden
   useEffect(() => {
     const fetchrecipes = async () => {
-      try {
+     try {
         const stored = await AsyncStorage.getItem("customrecipes");
         if (stored) {
           setrecipes(JSON.parse(stored));
@@ -88,7 +87,7 @@ const MyRecipeScreen = () => {
 
   return (
     <View style={styles.container}>
-      {/* Back Button */}
+
       <TouchableOpacity
         style={styles.backButton}
         onPress={() => navigation.goBack()}
