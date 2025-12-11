@@ -16,7 +16,7 @@ import {
 } from "react-native-responsive-screen";
 
 const RecipeDetailScreen = (props) => {
-  // Daten vom vorherigen Screen
+
   const recipe = props.route.params;
 
   const navigation = useNavigation();
@@ -36,7 +36,6 @@ const RecipeDetailScreen = (props) => {
 
   return (
     <ScrollView style={styles.container}>
-      {/* Bild */}
       <View style={styles.imageContainer} testID="imageContainer">
         <Image
           source={{ uri: recipe.recipeImage }}
@@ -44,7 +43,6 @@ const RecipeDetailScreen = (props) => {
         />
       </View>
 
-      {/* Back + Favorit */}
       <View style={styles.topButtons}>
         <TouchableOpacity
           style={styles.backButton}
@@ -61,19 +59,16 @@ const RecipeDetailScreen = (props) => {
         </TouchableOpacity>
       </View>
 
-      {/* Titel */}
       <View style={styles.titleContainer} testID="recipeTitle">
         <Text style={styles.title}>{recipe.recipeName}</Text>
       </View>
 
-      {/* Kategorie */}
       <View style={styles.categoryContainer} testID="recipeCategory">
         <Text style={styles.categoryText}>
           {recipe.category ? recipe.category : "Recipe"}
         </Text>
       </View>
 
-      {/* Misc Infos (Dummy-Werte falls nichts im Objekt steht) */}
       <View style={styles.miscContainer} testID="miscContainer">
         <View style={styles.miscItem}>
           <Text style={styles.miscLabel}>Time</Text>
@@ -93,7 +88,7 @@ const RecipeDetailScreen = (props) => {
         </View>
       </View>
 
-      {/* Zutaten */}
+
       <View style={styles.sectionContainer} testID="sectionContainer">
         <Text style={styles.sectionTitle}>Ingredients</Text>
         <View style={styles.ingredientsList} testID="ingredientsList">
@@ -115,7 +110,6 @@ const RecipeDetailScreen = (props) => {
         </View>
       </View>
 
-      {/* Anleitung */}
       <View style={styles.sectionContainer} testID="sectionContainer">
         <Text style={styles.sectionTitle}>Instructions</Text>
         <Text style={styles.instructionsText}>
