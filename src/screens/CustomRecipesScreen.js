@@ -33,7 +33,6 @@ const CustomRecipesScreen = () => {
   const handleToggleFavorite = () => {
     if (!recipe) return;
 
-    // Wir mappen unser eigenes Rezept auf das Schema der normalen Rezepte
     dispatch(
       toggleFavorite({
         idFood: recipe.title, // fallback ID
@@ -65,7 +64,7 @@ const CustomRecipesScreen = () => {
         ) : null}
       </View>
 
-      {/* Back + Herz */}
+
       <View style={styles.topButtons} testID="topButtonsContainer">
         <TouchableOpacity
           style={styles.backButton}
@@ -82,7 +81,7 @@ const CustomRecipesScreen = () => {
         </TouchableOpacity>
       </View>
 
-      {/* Inhalt */}
+
       <View style={styles.contentContainer} testID="contentContainer">
         <Text style={styles.title}>{recipe.title}</Text>
 
