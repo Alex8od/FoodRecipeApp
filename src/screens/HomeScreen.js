@@ -12,7 +12,6 @@ import FoodItems from "../components/recipes";
 export default function HomeScreen() {
   const [activeCategory, setActiveCategory] = useState("Chicken");
 
-  // Hardcoded categories for news
   const [categories, setCategories] = useState([
     {
       idCategory: "1",
@@ -92,7 +91,6 @@ export default function HomeScreen() {
       
   ]);
 
-  // Keep all foods in state (unfiltered list)
   const [allFood, setAllFood] = useState([
     {
       category:'Beef',
