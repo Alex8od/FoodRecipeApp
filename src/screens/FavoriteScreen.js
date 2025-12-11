@@ -21,7 +21,6 @@ const FavoriteScreen = () => {
     (state) => state.favorites.favoriterecipes || []
   );
 
-  // Wenn keine Favoriten -> leere Ansicht mit "Go back"
   if (!favoriteRecipesList.length) {
     return (
       <View style={styles.emptyContainer} testID="favoriteRecipes">
@@ -37,10 +36,8 @@ const FavoriteScreen = () => {
     );
   }
 
-  // Wenn es Favoriten gibt
   return (
     <View style={styles.container} testID="favoriteRecipes">
-      {/* Zurück-Button */}
       <TouchableOpacity
         style={styles.backButtonTop}
         onPress={() => navigation.goBack()}
@@ -50,7 +47,6 @@ const FavoriteScreen = () => {
 
       <Text style={styles.heading}>My Favorite Recipes</Text>
 
-      {/* Liste der Favoriten */}
       <FlatList
         data={favoriteRecipesList}
         keyExtractor={(item, index) =>
