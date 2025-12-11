@@ -1,4 +1,4 @@
-
+import Recipe from "../components/recipes";
 import { View, Text, ScrollView, Image, StyleSheet } from "react-native";
 import React, { useState } from "react";
 import { StatusBar } from "expo-status-bar";
@@ -729,11 +729,15 @@ export default function HomeScreen() {
         </View>
 
         <View testID="categoryList">
-       
+        <Categories
+    categories={categories}
+    activeCategory={activeCategory}
+    handleChangeCategory={handleChangeCategory}
+  />
         </View>
 
         <View testID="foodList">
-
+        <Recipe foods={filteredfoods} categories={categories} />
           </View>
       </ScrollView>
     </View>
