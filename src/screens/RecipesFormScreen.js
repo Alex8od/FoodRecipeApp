@@ -39,10 +39,8 @@ const RecipesFormScreen = () => {
       let recipes = stored ? JSON.parse(stored) : [];
 
       if (recipeToEdit && typeof recipeIndex === "number") {
-        // Bearbeiten
         recipes[recipeIndex] = newrecipe;
       } else {
-        // Neu hinzufügen
         recipes.push(newrecipe);
       }
 
@@ -64,8 +62,7 @@ const RecipesFormScreen = () => {
         {recipeToEdit ? "Edit Recipe" : "Add New Recipe"}
       </Text>
 
-      {/* Titel */}
-      <Text style={styles.label}>Title</Text>
+     <Text style={styles.label}>Title</Text>
       <TextInput
         style={styles.input}
         placeholder="Recipe title"
@@ -73,7 +70,6 @@ const RecipesFormScreen = () => {
         onChangeText={setTitle}
       />
 
-      {/* Bild-URL */}
       <Text style={styles.label}>Image URL</Text>
       <TextInput
         style={styles.input}
@@ -82,14 +78,13 @@ const RecipesFormScreen = () => {
         onChangeText={setImage}
       />
 
-      {/* Vorschau Bild */}
+
       {image ? (
         <Image source={{ uri: image }} style={styles.previewImage} />
       ) : (
         <Text style={styles.placeholderText}>Upload Image URL</Text>
       )}
 
-      {/* Beschreibung */}
       <Text style={styles.label}>Description</Text>
       <TextInput
         style={[styles.input, styles.textArea]}
@@ -99,7 +94,6 @@ const RecipesFormScreen = () => {
         multiline
       />
 
-      {/* Speichern Button */}
       <TouchableOpacity style={styles.button} onPress={saverecipe}>
         <Text style={styles.buttonText}>Save Recipe</Text>
       </TouchableOpacity>
